@@ -9,6 +9,21 @@ import { Produtos } from "../entities/produto.entity";
 
  @Injectable()
  export class ProdutoService{
+    findById(id: number): Promise<Produtos> {
+        throw new Error("Method not implemented.");
+    }
+    findAllByTitulo(titulo: string): Promise<Produtos[]> {
+        throw new Error("Method not implemented.");
+    }
+    create(produto: Produtos): Promise<Produtos> {
+        throw new Error("Method not implemented.");
+    }
+    update(produto: Produtos): Promise<Produtos> {
+        throw new Error("Method not implemented.");
+    }
+    delete(id: number) {
+        throw new Error("Method not implemented.");
+    }
 
     constructor (
         @InjectRepository(Produtos)

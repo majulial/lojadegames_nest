@@ -24,15 +24,6 @@ export class Produtos{
      @Transform(({ value }: TransformFnParams) => value?.trim()) // função para remover espaços em branco no inicio e fim 
     @IsNotEmpty() // FORÇA DIGITAÇÃO
 
-    /* VALIDANDO DADOS */
-
-    @Column({length: 100, nullable: false}) // VARCHAR(100) NOT NULL
-    categoria: string;
-
-
-     @Transform(({ value }: TransformFnParams) => value?.trim()) // função para remover espaços em branco no inicio e fim 
-    @IsNotEmpty() // FORÇA DIGITAÇÃO
-
     @Column({length: 1000, nullable: false}) // VARCHAR(1000) NOT NULL
     texto: string;
 
