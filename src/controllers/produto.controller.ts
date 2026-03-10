@@ -32,12 +32,6 @@ export class ProdutoController{
     return this.produtoService.findAllByTitulo(titulo);
     
     }
-     @Get('/categoria')
-    @HttpCode(HttpStatus.OK)
-    findAllByCategoria(@Param('titulo') categoria: string): Promise<Produtos[]> { // UTILIZANDO COLCHETES [] (ARRAY), POIS PODE SER QUE TENHAM MAIS TITULOS PARECIDOS
-    return this.produtoService.findAllByCategoria(categoria);
-    
-    }
      
        @Post()
     @HttpCode(HttpStatus.CREATED)

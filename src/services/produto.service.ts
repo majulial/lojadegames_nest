@@ -9,10 +9,8 @@ import { Produtos } from "../entities/produto.entity";
 
  @Injectable()
  export class ProdutoService{
-     findAllByCategoria(categoria: string): Promise<Produtos[]> {
-         throw new Error("Method not implemented.");
-     }
-   
+  
+
     constructor (
         @InjectRepository(Produtos)
         private produtoRepository: Repository<Produtos>,
