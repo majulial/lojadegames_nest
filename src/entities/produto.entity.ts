@@ -1,6 +1,7 @@
 import { Transform, TransformFnParams } from "class-transformer";
 import { IsNotEmpty } from "class-validator";
-import { Column, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { Categoria } from "../categoria/entities/categoria.entity";
 
 
 
@@ -21,6 +22,7 @@ export class Produtos{
     titulo: string;
 
 
+
      @Transform(({ value }: TransformFnParams) => value?.trim()) // função para remover espaços em branco no inicio e fim 
     @IsNotEmpty() // FORÇA DIGITAÇÃO
 
@@ -30,5 +32,11 @@ export class Produtos{
 
     @UpdateDateColumn() // ATT A DATA NA CRIAÇÃO E NA ATUALIZAÇÃO
     data: Date;
+
+    @ManyToOne( () => Categoria, (categoria) => categoria.produto, {
+        onDelete: "CASCADE"
+    })
+
+    categoria: Categoria;
 
 }
