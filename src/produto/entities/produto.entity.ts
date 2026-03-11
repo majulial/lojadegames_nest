@@ -1,7 +1,7 @@
 import { Transform, TransformFnParams } from "class-transformer";
 import { IsNotEmpty } from "class-validator";
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
-import { Categoria } from "../categoria/entities/categoria.entity";
+import { Categoria } from "../../categoria/entities/categoria.entity";
 
 
 

@@ -2,10 +2,11 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Produtos } from './entities/produto.entity';
-import { ProdutoModule } from './services/produto.module';
+import { Produtos } from './produto/entities/produto.entity';
 import { Categoria } from './categoria/entities/categoria.entity';
 import { CategoriaModule } from './categoria/services/categoria.module';
+import { ProdutoModule } from './produto/produto.module';
+
 
 @Module({
   imports: [
@@ -16,11 +17,13 @@ import { CategoriaModule } from './categoria/services/categoria.module';
       username: 'root',
       password: 'jujuba',
       database: 'db_lojadegames',
-      entities: [Produtos, Categoria],
-      synchronize: true
+      entities: [Produtos, Categoria, ],
+      synchronize: true,
+      logging: true,
     }),
     ProdutoModule,
     CategoriaModule
+  
   ],
   controllers: [],
   providers: [],

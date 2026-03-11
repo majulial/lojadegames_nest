@@ -1,7 +1,7 @@
 import { Transform, TransformFnParams } from "class-transformer";
 import { IsNotEmpty } from "class-validator";
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
-import { Produtos } from "../../entities/produto.entity";
+import { Produtos } from "../../produto/entities/produto.entity";
 
 
     @Entity({name: "tb_categorias"})
